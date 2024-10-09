@@ -40,7 +40,7 @@
       </Button>
       <ImageView fitHeight="39.0" fitWidth="30.0" layoutX="613.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/5151146.png" />
+            <Image url="@../../../../../Downloads/5151146.png" />
          </image>
       </ImageView>
       <Button fx:id="logOut" layoutX="508.0" layoutY="620.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="123.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: darkred; -fx-background-color: red;" text="Logout " textFill="#f8f8f8">
@@ -55,17 +55,17 @@
       </Button>
       <ImageView fitHeight="39.0" fitWidth="30.0" layoutX="319.0" layoutY="491.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/reset-password-1.png" />
+            <Image url="@../../../../../Downloads/reset-password-1.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="39.0" fitWidth="37.0" layoutX="889.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/374770-200.png" />
+            <Image url="@../../../../../Downloads/374770-200.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="915.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/delete-account-3130160-2640498.png" />
+            <Image url="@../../../../../Downloads/delete-account-3130160-2640498.png" />
          </image>
       </ImageView>
       <Button fx:id="inviteUser" layoutX="174.0" layoutY="247.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="175.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: green;" text="Invite User">
@@ -75,7 +75,7 @@
       </Button>
       <ImageView fitHeight="18.0" fitWidth="21.0" layoutX="325.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/png-clipart-black-email-sms-email-text-messaging-logo-computer-icons-envelope-mail-miscellaneous-angle.png" />
+            <Image url="@../../../../../Downloads/png-clipart-black-email-sms-email-text-messaging-logo-computer-icons-envelope-mail-miscellaneous-angle.png" />
          </image>
       </ImageView>
    </children>
