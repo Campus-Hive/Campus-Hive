@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #f7f6f3;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ResetUserAccountPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #f7f6f3;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ResetUserAccountPageController">
    <children>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="348.0" layoutY="322.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="103.0" style="-fx-border-color: #f7f6f3; -fx-border-radius: 75; -fx-padding: 0; -fx-border-width: 2; -fx-border-color: #DC143C; -fx-background-radius: 75; -fx-background-color: #DC143C;" text="Reset" textFill="#f7f6f3">
+      <Button fx:id="resetButton" alignment="CENTER" contentDisplay="CENTER" layoutX="465.0" layoutY="463.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="150.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: red; -fx-border-width: 4; -fx-border-color: darkred;" text="Reset" textFill="#f7f6f3">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <TextField alignment="TOP_LEFT" layoutX="362.0" layoutY="234.0" opacity="0.42" prefHeight="40.0" prefWidth="258.0" promptText="eg: pshriv16" style="-fx-border-color: #DC143C; -fx-border-radius: 10; -fx-background-radius: 10;">
+      <TextField fx:id="resetTxt" alignment="TOP_LEFT" layoutX="540.0" layoutY="322.0" opacity="0.42" prefHeight="40.0" prefWidth="258.0" promptText="eg: pshriv16" style="-fx-border-color: #DC143C; -fx-border-radius: 10; -fx-background-radius: 10;">
          <font>
             <Font size="24.0" />
          </font>
@@ -22,19 +22,19 @@
             <Insets />
          </opaqueInsets>
       </TextField>
-      <Label layoutX="147.0" layoutY="66.0" text="Reset User Account" textFill="#c9502b">
+      <Label layoutX="287.0" layoutY="117.0" text="Reset User Account" textFill="#c9502b">
          <font>
             <Font name="Dubai Light" size="64.0" />
          </font>
       </Label>
-      <Label layoutX="87.0" layoutY="234.0" text="Enter username to reset:">
+      <Label layoutX="265.0" layoutY="324.0" text="Enter username to reset:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="38.0" layoutY="27.0" mnemonicParsing="false" text="Home" textFill="#d71313">
+      <Button fx:id="homeButton" alignment="CENTER" layoutX="23.0" layoutY="23.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="138.0" style="-fx-border-color: #d71313; -fx-border-radius: 5;" text="Home" textFill="#d71313">
          <font>
-            <Font name="Dubai Light" size="18.0" />
+            <Font name="Dubai Light" size="24.0" />
          </font>
       </Button>
    </children>
