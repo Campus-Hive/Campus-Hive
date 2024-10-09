@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #f7f6f3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CreateAccountPageController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="1080.0" prefWidth="1920.0" VBox.vgrow="ALWAYS">
+      <children>
+        <!-- Button to create account -->
+        <Button fx:id="createAccountButton" layoutX="379.0" layoutY="618.0" mnemonicParsing="false" onAction="#handleCreateAccountButtonAction" prefHeight="51.0" prefWidth="324.0" style="-fx-background-color: lightgreen; -fx-background-radius: 20; -fx-border-radius: 20;" text="Create Account" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="379.0" AnchorPane.rightAnchor="377.0">
+           <font>
+              <Font size="34.0" />
+           </font>
+        </Button>
+        <!-- Input fields -->
+        <TextField fx:id="usernameField" layoutX="581.0" layoutY="288.0" prefHeight="60.0" prefWidth="400.0" promptText="eg : aranish" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="288.0">
+               <font>
+                  <Font size="27.0" />
+               </font></TextField>
+        <PasswordField fx:id="passwordField" layoutX="579.0" layoutY="440.0" prefHeight="60.0" prefWidth="400.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="440.0">
+               <font>
+                  <Font size="27.0" />
+               </font></PasswordField>
+        <PasswordField fx:id="confirmPasswordField" layoutX="581.0" layoutY="371.0" prefHeight="60.0" prefWidth="400.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="363.0">
+               <font>
+                  <Font size="27.0" />
+               </font></PasswordField>
+        
+        <!-- Labels -->
+        <Label layoutX="133.0" layoutY="288.0" prefHeight="75.0" prefWidth="255.0" text="Username" AnchorPane.leftAnchor="133.0" AnchorPane.topAnchor="288.0">
+           <font>
+              <Font size="27.0" />
+           </font>
+        </Label>
+        <Label layoutX="133.0" layoutY="363.0" prefHeight="75.0" prefWidth="264.0" text="Password" AnchorPane.leftAnchor="133.0" AnchorPane.topAnchor="363.0">
+           <font>
+              <Font size="27.0" />
+           </font>
+        </Label>
+        <Label layoutX="131.0" layoutY="431.0" prefHeight="75.0" prefWidth="240.0" text="Retype Password" AnchorPane.leftAnchor="133.0" AnchorPane.topAnchor="440.0">
+           <font>
+              <Font size="27.0" />
+           </font>
+        </Label>
+
+        <!-- ImageView for logo -->
+        <ImageView fitHeight="237.0" fitWidth="279.0" layoutX="394.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="394.0" AnchorPane.rightAnchor="407.0" AnchorPane.topAnchor="50.0">
+           <image>
+              <Image url="@CampusHive_Logo.png" />
+           </image>
+        </ImageView>
+
+        <!-- Login button that switches to the login page -->
+        <Button fx:id="LoginButton" layoutX="684.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="12.0" prefWidth="390.0" style="-fx-background-color: #f#eae8e47f6f3; -fx-border-color: lightgrey; -fx-border-width: 5; -fx-background-radius: 20; -fx-border-radius: 20;" text="Already have an account? Login">
+           <font>
+              <Font name="Al Tarikh Regular" size="23.0" />
+           </font>
+        </Button>
+            <Label layoutX="133.0" layoutY="511.0" prefHeight="75.0" prefWidth="240.0" text="Invite Code" AnchorPane.leftAnchor="133.0" AnchorPane.topAnchor="511.0">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameField1" layoutX="581.0" layoutY="513.0" prefHeight="60.0" prefWidth="400.0" promptText="eg : AV34S" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="513.0">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </TextField>
+
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #f7f6f3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DeleteUserAccountController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+      <children>
+        <!-- Title -->
+        <Label alignment="CENTER" contentDisplay="TOP" layoutX="315.0" layoutY="72.0" text="Deleting Your Account" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="266.0" AnchorPane.topAnchor="72.0">
+          <font>
+            <Font size="53.0" />
+          </font>
+        </Label>
+
+        <!-- User ID field -->
+        <TextField fx:id="userIdField" layoutX="488.0" layoutY="308.0" prefHeight="44.0" prefWidth="322.0" promptText="eg: Admin" style="-fx-border-radius: 20; -fx-background-radius: 20;" AnchorPane.topAnchor="300.0">
+               <font>
+                  <Font size="30.0" />
+               </font></TextField>
+
+        <!-- Labels for fields -->
+        <Label layoutX="202.0" layoutY="306.0" prefHeight="57.0" prefWidth="192.0" text="Username" AnchorPane.leftAnchor="202.0" AnchorPane.topAnchor="300.0">
+          <font>
+            <Font size="31.0" />
+          </font>
+        </Label>
+
+        <!-- Confirmation checkbox -->
+        <Label layoutX="202.0" layoutY="428.0" text="Are you sure you want to delete your account?" AnchorPane.leftAnchor="202.0" AnchorPane.topAnchor="450.0">
+          <font>
+            <Font size="31.0" />
+          </font>
+        </Label>
+        <CheckBox fx:id="confirmationCheckBox" alignment="CENTER" layoutX="864.0" layoutY="430.0" mnemonicParsing="false" AnchorPane.topAnchor="450.0">
+               <font>
+                  <Font size="26.0" />
+               </font></CheckBox>
+
+        <!-- Buttons for canceling or confirming the action -->
+        <Button fx:id="cancelButton" layoutX="87.0" layoutY="575.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="409.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: red; -fx-border-width: 4; -fx-border-color: darkred;" text="I don't want to proceed" textFill="#f7f7f7" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="87.0">
+          <font>
+            <Font size="31.0" />
+          </font>
+        </Button>
+
+        <Button fx:id="deleteButton" layoutX="620.0" layoutY="571.0" mnemonicParsing="false" onAction="#handleDeleteButtonAction" prefHeight="62.0" prefWidth="393.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: lightgreen; -fx-border-color: green; -fx-border-width: 4;" text="Confirm Deletion" textFill="#330f0f" AnchorPane.bottomAnchor="67.0" AnchorPane.rightAnchor="87.0">
+          <font>
+            <Font size="31.0" />
+          </font>
+        </Button>
+
+        <!-- Logo -->
+        <ImageView fitHeight="189.0" fitWidth="241.0" layoutX="12.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@CampusHive_Logo.png" />
+          </image>
+        </ImageView>
+
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
