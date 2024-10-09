@@ -1,11 +1,11 @@
 package application;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.event.ActionEvent;
 
 public class DeleteUserAccountController {
 
@@ -21,7 +21,7 @@ public class DeleteUserAccountController {
     @FXML
     private void handleDeleteButtonAction(ActionEvent event) {
         String userId = userIdField.getText();
-
+        
         // Ensure user input is provided and confirmed via the checkbox
         if (userId.isEmpty()) {
             statusLabel.setText("User ID cannot be empty.");
