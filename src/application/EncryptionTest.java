@@ -27,7 +27,7 @@ class EncryptionTest {
     void testEncryptDecrypt() {
         // Arrange
         String originalText = "Hello, Custom Encryption!";
-        String key = "CustomKey123";
+        String key = EncryptionManager.getKey();
 
         // Encrypt the original text
         String encryptedText = EncryptionManager.encrypt(originalText, key);
@@ -49,7 +49,7 @@ class EncryptionTest {
         String invalidBase64 = "InvalidBase64==";
 
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
-            EncryptionManager.decrypt(invalidBase64, "CustomKey123");
+            EncryptionManager.decrypt(invalidBase64, EncryptionManager.getKey());
         });
 
         // Check the exception message
@@ -61,7 +61,7 @@ class EncryptionTest {
     void testDecryptWithIncorrectKey() {
         // Arrange
         String originalText = "Hello, Custom Encryption!";
-        String key = "CustomKey123";
+        String key = EncryptionManager.getKey();
         String incorrectKey = "WrongKey456";
 
         // Encrypt the original text with the correct key

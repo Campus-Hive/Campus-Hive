@@ -134,7 +134,7 @@ public class HelpArticleView {
                 if (isSensitive && body != null) {
                     System.out.println("Encrypted Body Before Decryption: " + body);
                     try {
-                        body = EncryptionManager.decrypt(body, "CustomKey123");
+                        body = EncryptionManager.decrypt(body, EncryptionManager.getKey());
                         System.out.println("Decrypted Body: " + body);
                     } catch (Exception ex) {
                         System.err.println(article.getId() + " - Decryption failed: " + ex.getMessage());
