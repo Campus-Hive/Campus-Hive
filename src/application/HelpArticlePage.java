@@ -520,7 +520,7 @@ public class HelpArticlePage implements Initializable {
 
             // Encrypt if sensitive
             if (article.isSensitive()) {
-                String encryptedBody = EncryptionManager.encrypt(article.getBody(), "CustomKey123");
+                String encryptedBody = EncryptionManager.encrypt(article.getBody(), EncryptionManager.getKey());
                 System.out.println("Encrypted Body Before Saving: " + encryptedBody);
                 article.setBody(encryptedBody); // Save the encrypted body
             }
@@ -586,8 +586,8 @@ public class HelpArticlePage implements Initializable {
 	                // Decrypt if sensitive	
 	                if (isSensitive && body != null) {
 	                    System.out.println("Encrypted Body After Loading: " + body);
-	                    try {
-	                        body = EncryptionManager.decrypt(body, "CustomKey123");
+                            try {
+                                body = EncryptionManager.decrypt(body, EncryptionManager.getKey());
 	                    } catch (Exception ex) {
 	                        System.err.println(id + ex.getMessage());
 	                    }
@@ -595,7 +595,7 @@ public class HelpArticlePage implements Initializable {
 	
                 }
                 else {
-                	if(EncryptionManager.isEncrypted(body, "CustomKey123")) {
+                        if(EncryptionManager.isEncrypted(body, EncryptionManager.getKey())) {
                 		body = "This article is encrypted!";
                 	}
                 }

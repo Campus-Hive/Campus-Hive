@@ -20,6 +20,11 @@ import java.util.Base64;
 
 public class EncryptionManager {
 
+    public static String getKey() {
+        String key = System.getenv("ENCRYPTION_KEY");
+        return key != null ? key : "CustomKey123";
+    }
+
     /**
      * Encrypts the given data using a custom XOR-based encryption algorithm.
      *
@@ -103,14 +108,14 @@ public class EncryptionManager {
     public static void main(String[] args) {
         try {
             // Example usage
-            String key = "CustomKey123"; // Custom encryption key
+            String key = getKey();
             String originalText = "Hello, Custom Encryption!";
 
             System.out.println("Original Text: " + originalText);
 
             // Encrypt the data
             String encryptedBody = "BhsQBhYdPwwWX39SLRQUER1DLwAaQ0tDN10RGwsU"; // Example
-            String decryptedBody = EncryptionManager.decrypt(encryptedBody, "CustomKey123");
+            String decryptedBody = EncryptionManager.decrypt(encryptedBody, key);
             System.out.println("Decrypted Body: " + decryptedBody);
             
             String encryptedText = encrypt(originalText, key);

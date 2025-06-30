@@ -19,6 +19,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import application.PasswordUtils;
+
 public class H2Database {
 
     private static final String DB_URL = "jdbc:h2:./data/users/userdb";
@@ -54,7 +56,8 @@ public class H2Database {
              PreparedStatement preparedStatement = connection.prepareStatement(insertUserQuery)) {
 
             preparedStatement.setString(1, username);
-            preparedStatement.setString(2, password);
+            String hashed = PasswordUtils.hashPassword(password);
+            preparedStatement.setString(2, hashed);
             preparedStatement.setString(3, firstName);
             preparedStatement.setString(4, middleName);
             preparedStatement.setString(5, lastName);
@@ -202,10 +205,11 @@ public class H2Database {
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASSWORD);
              PreparedStatement preparedStatement = connection.prepareStatement(updatePasswordQuery)) {
 
-            preparedStatement.setString(1, newPassword);
+            String hashed = PasswordUtils.hashPassword(newPassword);
+            preparedStatement.setString(1, hashed);
             preparedStatement.setString(2, email);
             int rowsUpdated = preparedStatement.executeUpdate();
-            return rowsUpdated > 0; 
+            return rowsUpdated > 0;
         }
     }
     
@@ -262,18 +266,21 @@ public class H2Database {
     }
 
     public static String[] checkLogin(String username, String password) throws SQLException {
-        String selectQuery = "SELECT * FROM users WHERE username = ? AND password = ?";
+        String selectQuery = "SELECT * FROM users WHERE username = ?";
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASSWORD);
              PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
 
             preparedStatement.setString(1, username);
-            preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
+                String stored = resultSet.getString("password");
+                if (!PasswordUtils.verifyPassword(password, stored)) {
+                    return null;
+                }
                 String[] user = {
                         resultSet.getString("username"),
-                        resultSet.getString("password"),
+                        stored,
                         resultSet.getString("firstName"),
                         resultSet.getString("middleName"),
                         resultSet.getString("lastName"),
@@ -283,7 +290,7 @@ public class H2Database {
                 };
                 return user;
             } else {
-                return null; 
+                return null;
             }
         }
         

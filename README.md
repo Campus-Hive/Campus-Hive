@@ -115,6 +115,9 @@ The **Campus Hive** project uses H2 for data persistence:
 - After setting up the JavaFX SDK and H2 database, navigate to the main application file in the **src/application** directory.
 - Run the application from your IDE.
 
+### 5. Configure Environment Variables
+- Create a `.env` file (see `.env.example`) and define `ENCRYPTION_KEY` with the key used for article encryption.
+
 ---
 
 ## Project Structure
